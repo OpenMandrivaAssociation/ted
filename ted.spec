@@ -1,8 +1,8 @@
 Summary:        Ted, an easy Rich Text Processor
 Name:           ted
 Version:        2.17
-Release:        %mkrel 2
-License:      GPL
+Release:        %mkrel 3
+License:	GPL
 Group:          Office
 Source:         ftp://ftp.nluug.nl/pub/editors/ted/%{name}-%{version}.src.tar.bz2
 Source10:	%name-16.png
@@ -13,7 +13,7 @@ BuildRoot:	%_tmppath/%name-root
 BuildRequires:  lesstif-devel
 BuildRequires:  libjpeg-devel
 BuildRequires:	libtiff-devel
-BuildRequires:	libpng-devel
+BuildRequires:	png-devel
 BuildRequires:	XFree86-devel
 
 Summary(cs_CZ):	Ted, editor pro snadné formátovaní textu.
@@ -83,8 +83,6 @@ done
 mkdir -p %buildroot%_bindir
 mkdir -p %buildroot%_datadir/%name/{ind,afm}
 
-mkdir -p %buildroot{%_menudir,%_liconsdir,%_iconsdir,%_miconsdir}
-
 ( cd tedPackage ; tar xvf TedBindist.tar )
 
 cp -a tedPackage/afm/* %buildroot%_datadir/%name/afm/
@@ -92,20 +90,9 @@ cp -a tedPackage/ind/* %buildroot%_datadir/%name/ind/
 cp -a tedPackage/Ted/TedDocument-en_US.rtf %buildroot%_datadir/%name/
 install -m 755 Ted/Ted %buildroot%_bindir
 
-install %SOURCE10 %buildroot%_miconsdir/%name.png
-install %SOURCE11 %buildroot%_iconsdir/%name.png
-install %SOURCE12 %buildroot%_liconsdir/%name.png
-
-cat > %buildroot%_menudir/%name <<EOF
-?package(%{name}):\
-        command="%{_bindir}/Ted"\
-        title="Ted"\
-        longtitle="Ted, Rich Text Processor"\
-        needs="x11"\
-        section="Office/Wordprocessors"\
-        icon="%{name}.png"
-        xdg="true"
-EOF
+install -m 644 -D %SOURCE10 %buildroot%_iconsdir/hicolor/16x16/apps/%name.png
+install -m 644 -D %SOURCE11 %buildroot%_iconsdir/hicolor/32x32/apps/%name.png
+install -m 644 -D %SOURCE12 %buildroot%_iconsdir/hicolor/48x48/apps/%name.png
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -117,7 +104,7 @@ Exec=%{_bindir}/Ted
 Icon=%{name}
 Terminal=false
 Type=Application
-Categories=Office Wordprocessors; X-MandrivaLinux-Office-Wordprocessors;
+Categories=Motif;Office;Wordprocessor;
 EOF
 
 %clean
@@ -125,28 +112,19 @@ rm -rf %buildroot
 
 %post
 %{update_menus}
+%{update_icon_cache hicolor}
 
 %postun
 %{clean_menus}
+%{clean_icon_cache hicolor}
 
 %files
 %defattr(-, root, root)
 %doc README tedPackage/Ted/TedDocument-en_US.rtf
 %_bindir/Ted
 %_datadir/%name
-%_menudir/%name
-%_miconsdir/%name.png
-%_iconsdir/%name.png
-%_liconsdir/%name.png
+%_iconsdir/hicolor/16x16/apps/%name.png
+%_iconsdir/hicolor/32x32/apps/%name.png
+%_iconsdir/hicolor/48x48/apps/%name.png
 %{_datadir}/applications/mandriva-%{name}.desktop
-
-* Sat May 14 2005 Olivier Thauvin <nanardon@mandriva.org> 2.17-1mdk
-- 2.17
-
-* Wed Apr 28 2004 Olivier Thauvin <thauvin@aerov.jussieu.fr> 2.16-1mdk
-- 2.16
-- bzip source
-
-* Tue Apr 27 2004 Olivier Thauvin <thauvin@aerov.jussieu.fr> 2.11-1mdk
-- make a spec file
 
