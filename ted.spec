@@ -97,7 +97,6 @@ install -m 644 -D %SOURCE12 %buildroot%_iconsdir/hicolor/48x48/apps/%name.png
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
-Encoding=UTF-8
 Name=Ted
 Comment=Ted, Rich Text Processor
 Exec=%{_bindir}/Ted
