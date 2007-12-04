@@ -14,7 +14,7 @@ BuildRequires:  lesstif-devel
 BuildRequires:  libjpeg-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	png-devel
-BuildRequires:	XFree86-devel
+BuildRequires:	X11-devel
 
 Summary(cs_CZ):	Ted, editor pro snadné formátovaní textu.
 Summary(nl_NL):	Ted, een makkelijke 'Rich Text' verwerker
