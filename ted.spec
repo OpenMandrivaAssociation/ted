@@ -9,6 +9,7 @@ Source10:	%name-16.png
 Source11:	%name-32.png
 Source12:	%name-48.png
 URL:            http://www.nllgg.nl/Ted/index.html
+BuildRoot:	%_tmppath/%name-root
 BuildRequires:  lesstif-devel
 BuildRequires:  libjpeg-devel
 BuildRequires:	libtiff-devel
