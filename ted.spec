@@ -1,7 +1,7 @@
 Summary:        Ted, an easy Rich Text Processor
 Name:           ted
 Version:        2.17
-Release:        %mkrel 3
+Release:        %mkrel 5
 License:	GPL
 Group:          Office
 Source:         ftp://ftp.nluug.nl/pub/editors/ted/%{name}-%{version}.src.tar.bz2
