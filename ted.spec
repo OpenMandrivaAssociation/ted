@@ -8,7 +8,7 @@ Source:         ftp://ftp.nluug.nl/pub/editors/ted/%{name}-%{version}.src.tar.bz
 Source10:	%name-16.png
 Source11:	%name-32.png
 Source12:	%name-48.png
-URL:            http://www.nllgg.nl/Ted/index.html
+URL:            https://www.nllgg.nl/Ted/index.html
 BuildRoot:	%_tmppath/%name-root
 BuildRequires:  lesstif-devel
 BuildRequires:  libjpeg-devel
