@@ -10,6 +10,11 @@ Source11:	%name-32.png
 Source12:	%name-48.png
 URL:            https://www.nllgg.nl/Ted/index.html
 BuildRoot:	%_tmppath/%name-root
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:  lesstif-devel
 BuildRequires:  libjpeg-devel
 BuildRequires:	libtiff-devel
