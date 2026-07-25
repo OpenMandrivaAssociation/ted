@@ -1,7 +1,7 @@
 Summary:        Ted, an easy Rich Text Processor
 Name:           ted
 Version:        2.17
-Release:        %mkrel 6
+Release:        7
 License:	GPL
 Group:          Office
 Source:         ftp://ftp.nluug.nl/pub/editors/ted/%{name}-%{version}.src.tar.bz2
@@ -21,7 +21,7 @@ BuildRequires:	libtiff-devel
 BuildRequires:	png-devel
 BuildRequires:	X11-devel
 
-Summary(cs_CZ):	Ted, editor pro snadné formátovaní textu.
+Summary(cs_CZ):	Ted, editor pro snadnï¿½ formï¿½tovanï¿½ textu.
 Summary(nl_NL):	Ted, een makkelijke 'Rich Text' verwerker
 
 %description
@@ -36,15 +36,15 @@ spell checking dictionaries for different languages exist.
 This package is the general part.
 
 %description -l cs_CZ
-Ted je jednoduchý textový procesor.
-Umo¾òuje editovat RTF soubory WYSIWYG zpùsobem. Podporuje pou¾ití
-více fontù a tisk na PostScriptové tiskárny.
+Ted je jednoduchï¿½ textovï¿½ procesor.
+Umoï¿½ï¿½uje editovat RTF soubory WYSIWYG zpï¿½sobem. Podporuje pouï¿½itï¿½
+vï¿½ce fontï¿½ a tisk na PostScriptovï¿½ tiskï¿½rny.
 
-Ted obsahuje v základní èásti: program, pár .afm souborù a americký
-korektor pøeklepù. Existují i dal¹í balíèky obsahující slovníky
-pro korekturu pøeklepù jiných jazykù.
+Ted obsahuje v zï¿½kladnï¿½ ï¿½ï¿½sti: program, pï¿½r .afm souborï¿½ a americkï¿½
+korektor pï¿½eklepï¿½. Existujï¿½ i dalï¿½ï¿½ balï¿½ï¿½ky obsahujï¿½cï¿½ slovnï¿½ky
+pro korekturu pï¿½eklepï¿½ jinï¿½ch jazykï¿½.
 
-Toto je základní èást.
+Toto je zï¿½kladnï¿½ ï¿½ï¿½st.
 
 %description -l nl_NL
 Ted is een makkelijke 'Rich Text' verwerker. Je kan er RTF bestanden
